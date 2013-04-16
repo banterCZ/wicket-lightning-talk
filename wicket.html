@@ -1,0 +1,195 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/apache-wicket-logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/apache-wicket-logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/Pollock_to_Hussey.jpg)">
+   <footer class="source white">http://upload.wikimedia.org/wikipedia/commons/7/7a/Pollock_to_Hussey.jpg</footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Overview</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Component oriented</li>
+        <li>Open source (Apache License 2.0)</li>
+        <li>Java + HTML</li>
+        <li>Actual version 6.6.x</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello World</h2>
+      <h3>Application</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="java">
+import org.apache.wicket.protocol.http.WebApplication;
+
+public class HelloWorldApplication extends WebApplication {
+
+    public HelloWorldApplication() {
+    }
+
+    /**
+     * @see org.apache.wicket.Application#getHomePage()
+     */
+    @Override
+    public Class getHomePage() {
+        return HelloWorld.class;
+    }
+}
+</pre>
+    </article>
+  </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Hello World</h2>
+
+            <h3>Page</h3>
+        </hgroup>
+        <article>
+            <pre class="prettyprint" data-lang="java">
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+
+public class HelloWorld extends WebPage {
+    public HelloWorld() {
+        add(new Label("message", "Hello World!"));
+    }
+}
+            </pre>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Hello World</h2>
+
+            <h3>Template</h3>
+        </hgroup>
+        <article>
+      <pre class="prettyprint" data-lang="html">
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;span wicket:id=&quot;message"&quot;&gt;Message goes here&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Google Trends</h2>
+        </hgroup>
+        <article class="flexbox vcenter">
+            <img src="images/trends.png" class="reflect" alt="Google Trends"
+                 title="Google Trends">
+            <footer class="source">source: http://www.google.com/trends/explore?hl=en#q=wicket,%20jsf,%20jsp</footer>
+        </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Job Trends</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/jobgraph.png" alt="Job Trends" title="Job Trends">
+      <footer class="source">source: http://www.indeed.com/jobanalytics/jobtrends?q=wicket%2C+jsf%2C+jsp&l=</footer>
+    </article>
+  </slide>
+
+  <slide>
+      <aside class="note">
+      <section>
+        <ul>
+          <li>Nejsem nadšený</li>
+          <li>Lepší než JSF, i když primefaces mají dost komponent</li>
+          <li>Swing - prasení kódu</li>
+	  <li>Vysoká abstrakce nad HTTP protokolem</li>
+	  <li>Models hell</li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Conclusion</h2>
+    </hgroup>      
+    <article class="flexbox vcenter">
+      <img src="images/694px-Universal_indicator_paper.jpg">
+      <footer class="source">source: http://en.wikipedia.org/wiki/File:Universal_indicator_paper.jpg</footer>
+    </article>
+  </slide>
+
+  <slide class="lastslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/wicket-logo001-150x150.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
